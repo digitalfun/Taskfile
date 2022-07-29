@@ -1,5 +1,6 @@
 #!/bin/bash
 PATH=/.bin:$PATH
+ME="$0"
 
 # Text Format Ansi Codes
 BOLD="\e[1m"
@@ -10,7 +11,7 @@ NORMAL="\e[0m"
 # USER SETTINGS ###########################
 
 EDITOR=nano
-TASKFILE_TEMPLATE="/home/ ... /Taskfile.template"
+TASKFILE_TEMPLATE="/home/ ... /bin/Taskfile.template"
 
 # STANDARD TASKS ##########################
 
@@ -39,16 +40,23 @@ function help {
 # HELPER TASKS ###########################
 
 function edit {
-    ${EDITOR} "$0"
-}
-
-function edit-template {
-    ${EDITOR} "${TASKFILE_TEMPLATE}"
+    echo "Syntax: $0 ${FUNCNAME[0]} [template]"
+    echo "Edit the actual Taskfile or the template using flag 'template'"
+    if [[ $# -eq 0 ]]; then
+        echo "edit Taskfile"
+        ${EDITOR} "$0"
+    else
+        if [[ $1 -eq "template" ]]; then
+            echo "edit Taskfile template"
+            ${EDITOR} "${TASKFILE_TEMPLATE}"
+        fi
+    fi
 }
 
 # USER TASKS #############################
 
 # ... insert here ...
+
 
 # Run
 
