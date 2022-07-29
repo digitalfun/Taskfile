@@ -1,0 +1,8 @@
+# add this aliases to your shell rc file (ex.: $ZSH_CUSTOM/alias.zsh)
+
+# alias for Taskfile ############################
+
+# init standard template
+alias task-init="cp -p /home/ ... /Taskfile.template ./Taskfile"
+# run tasks
+alias task=./Taskfile
