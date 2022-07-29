@@ -1,5 +1,18 @@
 #!/bin/bash
-PATH=./node_modules/.bin:$PATH
+PATH=/.bin:$PATH
+
+# Text Format Ansi Codes
+BOLD="\e[1m"
+UNDERLINE="\e[4m"
+RED="\e[31m"
+NORMAL="\e[0m"
+
+# USER SETTINGS ###########################
+
+EDITOR=nano
+TASKFILE_TEMPLATE="/home/olegesot/bin/Taskfile.template"
+
+# STANDARD TASKS ##########################
 
 function install {
     echo "install task not implemented"
@@ -14,14 +27,30 @@ function start {
 }
 
 function default {
-    start
+    help
 }
 
 function help {
-    echo "$0 <task> <args>"
-    echo "Tasks:"
+    echo -e "${BOLD}$0 <task> <args>${NORMAL}"
+    echo -e "${UNDERLINE}Tasks:${NORMAL}"
     compgen -A function | cat -n
 }
+
+# HELPER TASKS ###########################
+
+function edit {
+    ${EDITOR} "$0"
+}
+
+function edit-template {
+    ${EDITOR} "${TASKFILE_TEMPLATE}"
+}
+
+# USER TASKS #############################
+
+# ... insert here ...
+
+# Run
 
 TIMEFORMAT="Task completed in %3lR"
 time ${@:-default}
