@@ -1,0 +1,16 @@
+function log {
+    git log --all --decorate --graph --abbrev-commit --date=relative
+}
+
+function stat {
+    git status
+}
+
+function b {
+    # if no branch given -> show list
+    if [[ $# -eq 0 ]]; then
+        git branch --list
+    else
+        git checkout $1
+    fi
+}
