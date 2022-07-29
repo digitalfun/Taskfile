@@ -14,3 +14,14 @@ function b {
         git checkout $1
     fi
 }
+
+function push {
+    # required argument <branch>
+    if [[ $# -eq 0 ]]; then
+        echo -e "${RED}REQUIRED ARGUMENT: <branch> ${NORMAL}"
+        echo -e "Syntax: $0 ${FUNCNAME[0]} ${RED}<branch>${NORMAL}"
+        exit
+    else
+        git push origin $1
+    fi
+}
