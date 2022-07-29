@@ -4,5 +4,9 @@
 
 # init standard template
 alias task-init="cp -p /home/ ... /Taskfile.template ./Taskfile"
+
+# init dev template (git etc)
+alias task-init-dev="cp -p /home/ ... /Taskfile.dev.template ./Taskfile"
+
 # run tasks
 alias task=./Taskfile
