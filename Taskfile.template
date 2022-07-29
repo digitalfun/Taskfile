@@ -10,20 +10,20 @@ NORMAL="\e[0m"
 # USER SETTINGS ###########################
 
 EDITOR=nano
-TASKFILE_TEMPLATE="/home/olegesot/bin/Taskfile.template"
+TASKFILE_TEMPLATE="/home/ ... /Taskfile.template"
 
 # STANDARD TASKS ##########################
 
 function install {
-    echo "install task not implemented"
+    echo -e "${RED}install task not implemented${NORMAL}"
 }
 
 function build {
-    echo "build task not implemented"
+    echo -e "${RED}build task not implemented${NORMAL}"
 }
 
 function start {
-    echo "start task not implemented"
+    echo -e "${RED}start task not implemented${NORMAL}"
 }
 
 function default {
